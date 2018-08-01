@@ -1,0 +1,43 @@
+//menu style
+
+$menu_index:3;
+
+.menu-btn{
+    position: absolute;
+    z-index: $menu_index;
+    top: 35px;
+    right: 35px;
+    @include easeOut();
+    cursor: pointer;
+
+    .btn-line{
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    //rotatet into X menu lines
+    &.close{
+        transform:rotate(180deg);
+        .btn-line{
+            //line 1 rotate
+
+            &:nth-child(1){
+               transform: rotate(45deg) translate(5px, 5px);
+               
+            }
+
+            //hide line 3
+            &:nth-child(2){
+                opacity: 0;
+            }
+            //line line rotate
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+        }
+    }
+}
