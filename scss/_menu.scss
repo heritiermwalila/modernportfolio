@@ -1,6 +1,7 @@
 //menu style
 
 $menu_index:3;
+$portrait_image:url('../img/heritier2.jpg');
 
 .menu-btn{
     position: absolute;
@@ -39,5 +40,89 @@ $menu_index:3;
             }
 
         }
+    }
+}
+
+//create menu overley
+
+.menu{
+    position:fixed;
+    top: 0;
+    width: 100%;
+    opacity: $background_opacity;
+    visibility: hidden;
+
+    &.show{
+        visibility: visible;
+    }
+    &-branding,
+    &-nav{
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    &-nav{
+        margin: 0;
+        padding: 0;
+        background: darken($primary_color, 5);
+        list-style: none;
+        transform: translate3d(0,-100%, 0);
+        @include easeOut();
+
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+    }
+    &-branding{
+        background: #333;
+        transform: translate3d(0,100%,0);
+        @include easeOut();
+        &.show{
+            transform: translate3d(0,0,0);
+        }
+        .portrait{
+            width: 250px;
+            height: 250px;
+            background: $portrait_image;
+            border-radius: 50%;
+            border:3px solid $secondary_color;
+        }
+    }
+
+    .nav-item{
+        transform: translate3d(600px, 0,0);
+        @include easeOut();
+        &.show{
+            transform:translate3d(0,0,0);
+        }
+        &.current > a{
+            color: $secondary_color;
+        }
+    }
+    .nav-link{
+        position: relative;
+        display: inline-block;
+        font-size: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        text-decoration: none;
+        @include easeOut();
+        &:hover{
+            color: $secondary_color;
+        }
+    }
+}
+
+//create delay for each nav item
+
+@for $x from 1 through 4{
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s;
     }
 }
