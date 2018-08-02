@@ -1,0 +1,94 @@
+//widescreen
+@include mediaXl{
+
+}
+
+//Desktop and laptop
+@include mediaLg{
+
+}
+
+
+//Tablets and Small laptop
+@include mediaMd{
+
+    main{
+        text-align: center;
+        align-items: center;
+        padding: 2rem;
+        
+
+        
+    
+    }
+
+    ul.menu-nav{
+        height: 70vh;
+        transform: translate3d(0, 100%, 0);
+    }
+    div.menu-branding{
+        height: 30vh;
+        transform: translate3d(600px, 0, 0);
+        .portrait{
+            background: url('../img/heritier2-small.jpg');
+            width: 150px;
+            height: 150px;
+            background-position: center 24%;
+        }
+    }
+
+    div.menu-branding, ul.menu-nav{
+        float: none;
+        width: 100%;
+        &.show{
+            transform: translate3d(0,0,0)
+        }
+    }
+
+
+    
+}
+
+
+//Smartphone
+@include mediaSm{
+   
+    main{
+        text-align: center;
+        align-items: center;
+        padding: 2rem;
+
+        .lg-heading{
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        h1,
+        h2,
+        h3{
+            margin: 0;
+            &.lg-heading{
+                font-size: $size_heading - 3rem;
+            }
+        }
+
+       
+    }
+
+    div.menu-branding{
+        height: 40vh;
+
+        .portrait{
+            background: url('../img/heritier2-small.jpg');
+            width: 150px;
+            height: 150px;
+            background-position: center 24%;
+        }
+        
+    }
+    ul.menu-nav{
+        height: 60vh;
+        
+    }
+}
+

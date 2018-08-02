@@ -89,6 +89,54 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 768px) {
+  main {
+    text-align: center;
+    align-items: center;
+    padding: 2rem; }
+  ul.menu-nav {
+    height: 70vh;
+    transform: translate3d(0, 100%, 0); }
+  div.menu-branding {
+    height: 30vh;
+    transform: translate3d(600px, 0, 0); }
+    div.menu-branding .portrait {
+      background: url("../img/heritier2-small.jpg");
+      width: 150px;
+      height: 150px;
+      background-position: center 24%; }
+  div.menu-branding, ul.menu-nav {
+    float: none;
+    width: 100%; }
+    div.menu-branding.show, ul.menu-nav.show {
+      transform: translate3d(0, 0, 0); } }
+
+@media screen and (max-width: 568px) {
+  main {
+    text-align: center;
+    align-items: center;
+    padding: 2rem; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+    main h1,
+    main h2,
+    main h3 {
+      margin: 0; }
+      main h1.lg-heading,
+      main h2.lg-heading,
+      main h3.lg-heading {
+        font-size: 3rem; }
+  div.menu-branding {
+    height: 40vh; }
+    div.menu-branding .portrait {
+      background: url("../img/heritier2-small.jpg");
+      width: 150px;
+      height: 150px;
+      background-position: center 24%; }
+  ul.menu-nav {
+    height: 60vh; } }
+
 * {
   box-sizing: border-box; }
 
