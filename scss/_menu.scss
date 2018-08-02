@@ -15,7 +15,7 @@ $portrait_image:url('../img/heritier2.jpg');
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background:set-text-color($primary_color);
         cursor: pointer;
     }
 
@@ -79,7 +79,7 @@ $portrait_image:url('../img/heritier2.jpg');
         }
     }
     &-branding{
-        background: #333;
+        background: set-text-color($primary_color);
         transform: translate3d(0,100%,0);
         @include easeOut();
         &.show{
@@ -112,6 +112,7 @@ $portrait_image:url('../img/heritier2.jpg');
         text-transform: uppercase;
         padding: 1rem 0;
         text-decoration: none;
+        color:set-text-color($primary_color);
         @include easeOut();
         &:hover{
             color: $secondary_color;
