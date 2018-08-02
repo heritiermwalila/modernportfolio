@@ -152,6 +152,32 @@ main{
     color:#333;
 }
 
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    div{
+        font-size: 2rem;
+        border:3px solid #fff;
+        padding:1.5rem 2.5rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover{
+            padding:0.5rem 1.5rem;
+            background: $secondary_color;
+            color: set-text-color($secondary_color);
+            border: 0px;
+
+            span{
+                color:set-text-color($secondary_color);
+            }
+        }
+    }
+}
+
 
 #main-footer{
     text-align: center;
